@@ -1,0 +1,14 @@
+Sliding window is a technique used to solve problems that involve arrays or lists, where you need to find a subarray or subsequence that meets certain criteria. The idea is to maintain a "window" of elements that can expand and contract as needed.
+This technique is particularly useful for problems involving contiguous subarrays, such as finding the maximum sum of a subarray of fixed size, or // sliding window algorithm
+    while(j<n){
+        int currsum = prevsum + arr[j] - arr[i-1];
+        if(maxSum<currsum){
+            maxSum = currsum;
+            maxidx = i;
+        }
+        prevsum = currsum;
+        i++,j++;
+    }the longest substring without repeating characters.
+
+
+

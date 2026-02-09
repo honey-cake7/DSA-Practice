@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& nums) {
+        int n = nums.size();
+        // vector<int> run(n);
+        // run[0] = nums[0];
+        for(int i = 1 ; i < n ; i++){
+            nums[i] += nums[i-1];
+        }  
+        return nums;
+    }
+}; 
+// Time Complexity: O(n)
+// Space Complexity: O(1) (in-place modification of input vector)
+// This code computes the running sum of an array in-place, modifying the input vector directly.

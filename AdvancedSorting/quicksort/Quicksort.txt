@@ -1,0 +1,21 @@
+Quick sort is a divide-and-conquer sorting algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively.
+
+Here is a simple implementation in Python:
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        return quicksort(less) + [pivot] + quicksort(greater)
+
+# Example usage:
+arr = [3, 6, 8, 10, 1, 2, 1]
+print(quicksort(arr))  # Output: [1, 1, 2, 3, 6, 8, 10]
+Time Complexity: O(n log n) on average, O(n^2) in the worst case (when the smallest or largest element is always chosen as the pivot).
+Space Complexity: O(log n) due to the recursive stack space used by the algorithm.
+Using Randomized Quick Sort can help avoid the worst-case scenario by randomly selecting the pivot element. (si+ei)/2
+Stable: No, quicksort is not a stable sorting algorithm, meaning that it does not preserve the relative order of equal elements.
+Disadvantages: The worst-case time complexity can be O(n^2) if the pivot is not chosen wisely, such as when the smallest or largest element is always chosen as the pivot. This can be mitigated by using randomized quicksort or by choosing a better pivot strategy. 
